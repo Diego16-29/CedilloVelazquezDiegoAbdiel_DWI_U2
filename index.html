@@ -1,617 +1,1057 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- SEO META TAGS -->
-  <title>Charly Barber Shop | Barbería Premium & Estilo de Lujo</title>
-  <meta name="description" content="Charly Barber Shop es tu barbería premium en el corazón de la ciudad. Cortes clásicos, diseño de barba, afeitado a navaja y cuidado capilar de alta gama. Reserva tu cita hoy.">
-  <meta name="keywords" content="barberia, corte de pelo, barber shop, barba, afeitado, premium, cdmx, monterrey, estilo masculino, charly barber shop">
-  <meta name="author" content="Charly Barber Shop">
-  
-  <!-- Open Graph / Meta de Redes Sociales -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Charly Barber Shop | Barbería Premium">
-  <meta property="og:description" content="Experimenta el arte del buen corte en una barbería premium con detalles de lujo y barberos expertos.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&q=80&w=800">
-  <meta property="og:url" content="https://charlybarbershop.com">
-
-  <!-- FAVICON -->
-  <link rel="icon" type="image/png" href="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&q=80&w=32">
-
-  <!-- ESTILOS CSS -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <title>BALLER & CO. | The Footballers' Barber Lounge</title>
+  <meta name="description"
+    content="Barbería de alta gama especializada en cortes para futbolistas, degradados de élite, perfilados y experiencia VIP de vestuario.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@700;800;900&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-  <!-- BARRA DE PROGRESO DE LECTURA (SCROLL PROGRESS) -->
-  <div class="scroll-progress-container" id="scrollProgress">
-    <div class="scroll-progress-bar"></div>
-  </div>
+<body class="theme-stadium-dark">
 
-  <!-- PRELOADER ELEGANTE -->
-  <div class="preloader" id="preloader">
-    <div class="preloader-logo">
-      <!-- Icono de Tijera SVG animado -->
-      <svg class="preloader-icon animate-pulse" viewBox="0 0 24 24">
-        <path d="M19 3c-1.8 0-3.4 1.2-3.8 2.9l-3.2 2.6-3.2-2.6C8.4 4.2 6.8 3 5 3 2.2 3 0 5.2 0 8s2.2 5 5 5c1 0 1.9-.3 2.7-.8l2.3 2.8-2.3 2.8c-.8-.5-1.7-.8-2.7-.8-2.8 0-5 2.2-5 5s2.2 5 5 5c1.8 0 3.4-1.2 3.8-2.9l3.2-2.6 3.2 2.6c.4 1.7 2 2.9 3.8 2.9 2.8 0 5-2.2 5-5s-2.2-5-5-5c-1 0-1.9.3-2.7.8l-2.3-2.8 2.3-2.8c.8.5 1.7.8 2.7.8 2.8 0 5-2.2 5-5s-2.2-5-5-5zm-14 8c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm14 10c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm0-13c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm-14 13c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/>
-      </svg>
-      <h2 class="preloader-title">Charly <span>Barber</span></h2>
-      <div class="preloader-spinner"></div>
+  <!-- Top Match Status Bar -->
+  <div class="top-status-bar">
+    <div class="container status-flex">
+      <div class="status-indicator">
+        <span class="pulse-dot"></span>
+        <span class="status-text"><strong>VESTUARIO EN VIVO:</strong> 3 Sillones libres para hoy en Sede Central</span>
+      </div>
+      <div class="match-time">
+        <i class="fa-solid fa-trophy text-gold"></i>
+        <span>Sorteo de Entrada VIP Champions League con tu corte</span>
+      </div>
+      <div class="audio-control" id="audioToggleBtn" title="Efectos de sonido de estadio">
+        <i class="fa-solid fa-volume-high" id="audioIcon"></i>
+        <span id="audioLabel">Ambiente: ON</span>
+      </div>
     </div>
   </div>
 
-  <!-- NAVBAR FIJA (CON BLUR AL SCROLL) -->
-  <header class="header-nav" id="headerNav">
-    <nav class="nav-container">
-      <!-- Logo con icono inline SVG de tijeras -->
-      <a href="#inicio" class="logo" id="logoLink">
-        <svg class="logo-icon" viewBox="0 0 24 24" aria-label="Logo de Charly Barber Shop">
-          <path d="M19 3c-1.8 0-3.4 1.2-3.8 2.9l-3.2 2.6-3.2-2.6C8.4 4.2 6.8 3 5 3 2.2 3 0 5.2 0 8s2.2 5 5 5c1 0 1.9-.3 2.7-.8l2.3 2.8-2.3 2.8c-.8-.5-1.7-.8-2.7-.8-2.8 0-5 2.2-5 5s2.2 5 5 5c1.8 0 3.4-1.2 3.8-2.9l3.2-2.6 3.2 2.6c.4 1.7 2 2.9 3.8 2.9 2.8 0 5-2.2 5-5s-2.2-5-5-5c-1 0-1.9.3-2.7.8l-2.3-2.8 2.3-2.8c.8.5 1.7.8 2.7.8 2.8 0 5-2.2 5-5s-2.2-5-5-5zm-14 8c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm14 10c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm0-13c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm-14 13c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/>
-        </svg>
-        <span class="logo-text">Charly <span>Barber</span></span>
+  <!-- Navigation Bar -->
+  <header class="navbar" id="mainHeader">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo">
+        <div class="logo-crest">
+          <i class="fa-solid fa-scissors"></i>
+          <span class="star-badge"><i class="fa-solid fa-star"></i></span>
+        </div>
+        <div class="logo-text">
+          <span class="brand-name">BALLER<span class="highlight">&</span>CO.</span>
+          <span class="brand-sub">FOOTBALLERS' BARBER LOUNGE</span>
+        </div>
       </a>
 
-      <!-- Menu de Navegación -->
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="#inicio" class="nav-link active" id="navLinkInicio">Inicio</a></li>
-        <li><a href="#servicios" class="nav-link" id="navLinkServicios">Servicios</a></li>
-        <li><a href="#galeria" class="nav-link" id="navLinkGaleria">Galería</a></li>
-        <li><a href="#nosotros" class="nav-link" id="navLinkNosotros">Nosotros</a></li>
-        <li><a href="#contacto" class="nav-link" id="navLinkContacto">Contacto</a></li>
-        <li class="nav-cta-mobile" style="display: none;">
-          <a href="#contacto" class="btn btn-primary" id="btnCtaMobile">Reservar Cita</a>
-        </li>
-      </ul>
+      <nav class="nav-menu" id="navMenu">
+        <a href="#hero" class="nav-link active">Inicio</a>
+        <a href="#servicios" class="nav-link">Cortes Pro</a>
+        <a href="#estilos" class="nav-link">Galería de Cracks</a>
+        <a href="#barberos" class="nav-link">El Plantel (DTs)</a>
+        <a href="#lounge" class="nav-link">Lounge VIP</a>
+        <a href="#testimonios" class="nav-link">Prensa</a>
+      </nav>
 
-      <!-- Boton Reservar Cita (Desktop) -->
-      <div class="nav-cta" id="navCta">
-        <a href="#contacto" class="btn btn-primary" id="btnCtaDesktop">Reservar Cita</a>
+      <div class="nav-actions">
+        <a href="#booking" class="btn btn-primary btn-glow">
+          <i class="fa-solid fa-ticket"></i>
+          <span>RESERVAR MATCH</span>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
-
-      <!-- Menu Hamburguesa (Movil) -->
-      <button class="hamburger" id="hamburgerMenu" aria-label="Abrir menú de navegación">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </nav>
+    </div>
   </header>
 
-  <main>
-    <!-- 1. SECCIÓN HERO (PANTALLA COMPLETA & PARALLAX) -->
-    <section class="hero" id="inicio">
-      <div class="hero-bg" id="heroBg"></div>
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="stadium-glow-light"></div>
+    <div class="stadium-lines-bg"></div>
+
+    <div class="container hero-grid">
       <div class="hero-content">
-        <span class="hero-subtitle">Estilo · Tradición · Precisión</span>
-        <h1 class="hero-title">El Arte Del <span>Buen Corte</span></h1>
-        <p class="hero-desc">Barbería premium en el corazón de la ciudad. Diseñado exclusivamente para hombres que valoran los detalles y un servicio excepcional.</p>
-        <div class="hero-buttons">
-          <a href="#servicios" class="btn btn-primary" id="heroBtnPrimary">Ver Servicios</a>
-          <a href="#nosotros" class="btn btn-secondary" id="heroBtnSecondary">Conocer más</a>
+        <div class="hero-badge">
+          <span class="badge-ball"><i class="fa-regular fa-futbol"></i></span>
+          <span>EL CORTE DE LOS QUE DEJAN HUELLA EN LA CANCHA</span>
         </div>
-      </div>
-      <!-- Flecha de scroll hacia abajo -->
-      <a href="#servicios" class="hero-scroll-btn" id="heroScrollBtn" aria-label="Desplazarse hacia servicios">
-        <svg class="hero-scroll-icon" viewBox="0 0 24 24">
-          <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
-        </svg>
-      </a>
-    </section>
+        <h1 class="hero-title">
+          DONDE LOS <span class="text-gradient-gold">CRACKS</span> DEFINEN SU <span
+            class="text-gradient-turf">ESTILO</span>.
+        </h1>
+        <p class="hero-description">
+          Degradados milimétricos, perfilados quirúrgicos con navaja japonesa y el tratamiento VIP que merecen las
+          leyendas del fútbol. Diseñado para futbolistas profesionales y apasionados del buen juego.
+        </p>
 
-    <!-- 2. SECCIÓN SERVICIOS (GRID Y HOVER PREMIUM) -->
-    <section class="services-section section-padding" id="servicios">
-      <div class="container">
-        <div class="section-header reveal-fade">
-          <span class="section-subtitle">Lo que hacemos</span>
-          <h2 class="section-title">Nuestros Servicios Premium</h2>
-        </div>
-
-        <div class="services-grid">
-          <!-- Tarjeta 1: Corte Clásico -->
-          <article class="service-card reveal-slide-up" id="serviceCard1">
-            <div class="service-icon-wrapper">
-              <!-- Icono SVG Barber Pole / Barberia -->
-              <svg class="service-icon" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 13v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 1.84-.52 3.55-1.4 5.01z"/>
-              </svg>
-            </div>
-            <h3 class="service-name">Corte Clásico</h3>
-            <p class="service-desc">Perfilado con tijeras y maquinilla adaptado a la forma de tu cabeza. Incluye lavado y peinado con cera pomada.</p>
-            <span class="service-price">$150</span>
-            <a href="#contacto" class="btn btn-gold-outline service-btn" id="btnBook1">Reservar</a>
-          </article>
-
-          <!-- Tarjeta 2: Corte + Barba -->
-          <article class="service-card reveal-slide-up delay-100" id="serviceCard2">
-            <div class="service-icon-wrapper">
-              <!-- Icono SVG Tijera y Peine -->
-              <svg class="service-icon" viewBox="0 0 24 24">
-                <path d="M6 3C3.79 3 2 4.79 2 7c0 1.48.81 2.76 2 3.44V21h4v-3h2v3h4V10.44c1.19-.68 2-1.96 2-3.44 0-2.21-1.79-4-4-4-1.8 0-3.4 1.2-3.8 2.9L12 8.36 11.8 5.9C11.4 4.2 9.8 3 8 3zm0 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm8 0c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/>
-              </svg>
-            </div>
-            <h3 class="service-name">Corte + Barba</h3>
-            <p class="service-desc">El combo de lujo. Corte de cabello personalizado más delineado y cuidado de barba con toallas calientes y aceite esencial.</p>
-            <span class="service-price">$220</span>
-            <a href="#contacto" class="btn btn-gold-outline service-btn" id="btnBook2">Reservar</a>
-          </article>
-
-          <!-- Tarjeta 3: Afeitado con Navaja -->
-          <article class="service-card reveal-slide-up delay-200" id="serviceCard3">
-            <div class="service-icon-wrapper">
-              <!-- Icono SVG Navaja -->
-              <svg class="service-icon" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.9c-.79.79-2.07.79-2.86 0L9.4 10.24c-.79-.79-.79-2.07 0-2.86l.9-.9c.79-.79 2.07-.79 2.86 0l1.91 1.91c.78.79.78 2.07 0 2.86z"/>
-              </svg>
-            </div>
-            <h3 class="service-name">Afeitado con Navaja</h3>
-            <p class="service-desc">Ritual tradicional de afeitado con navaja libre. Masaje facial previo con vapor, toalla caliente y loción refrescante balsámica.</p>
-            <span class="service-price">$180</span>
-            <a href="#contacto" class="btn btn-gold-outline service-btn" id="btnBook3">Reservar</a>
-          </article>
-
-          <!-- Tarjeta 4: Tratamiento Capilar -->
-          <article class="service-card reveal-slide-up" id="serviceCard4">
-            <div class="service-icon-wrapper">
-              <!-- Icono SVG Locion / Botella -->
-              <svg class="service-icon" viewBox="0 0 24 24">
-                <path d="M19 6h-2V3c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v3H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM9 3h6v3H9V3zm10 17H5V8h14v12zm-8-9h2v3h3v2h-3v3h-2v-3H8v-2h3v-3z"/>
-              </svg>
-            </div>
-            <h3 class="service-name">Tratamiento Capilar</h3>
-            <p class="service-desc">Exfoliación profunda del cuero cabelludo, hidratación con champú premium y mascarilla rejuvenecedora anticaída.</p>
-            <span class="service-price">$200</span>
-            <a href="#contacto" class="btn btn-gold-outline service-btn" id="btnBook4">Reservar</a>
-          </article>
-
-          <!-- Tarjeta 5: Diseño de Cejas -->
-          <article class="service-card reveal-slide-up delay-100" id="serviceCard5">
-            <div class="service-icon-wrapper">
-              <!-- Icono SVG Ojo/Pinzas -->
-              <svg class="service-icon" viewBox="0 0 24 24">
-                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
-              </svg>
-            </div>
-            <h3 class="service-name">Diseño de Cejas</h3>
-            <p class="service-desc">Estilización y perfilado de cejas masculino con navaja e hilo para resaltar la mirada de forma natural.</p>
-            <span class="service-price">$100</span>
-            <a href="#contacto" class="btn btn-gold-outline service-btn" id="btnBook5">Reservar</a>
-          </article>
-
-          <!-- Tarjeta 6: Corte Infantil -->
-          <article class="service-card reveal-slide-up delay-200" id="serviceCard6">
-            <div class="service-icon-wrapper">
-              <!-- Icono SVG Niño / Cara -->
-              <svg class="service-icon" viewBox="0 0 24 24">
-                <path d="M12 2c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l2.79-2.79C10.09 18.66 11.02 19 12 19c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/>
-              </svg>
-            </div>
-            <h3 class="service-name">Corte Infantil</h3>
-            <p class="service-desc">Para los pequeños reyes del hogar. Corte divertido y moderno para menores de 12 años con trato paciente y especializado.</p>
-            <span class="service-price">$120</span>
-            <a href="#contacto" class="btn btn-gold-outline service-btn" id="btnBook6">Reservar</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. GALERÍA DE CORTES (FILTROS Y LIGHTBOX) -->
-    <section class="gallery-section section-padding" id="galeria">
-      <div class="container">
-        <div class="section-header reveal-fade">
-          <span class="section-subtitle">Nuestro Trabajo</span>
-          <h2 class="section-title">Galería de Estilos</h2>
+        <div class="hero-cta-group">
+          <a href="#booking" class="btn btn-primary btn-xl btn-pulse">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>PEDIR CONVOCATORIA / TURNO</span>
+          </a>
+          <a href="#servicios" class="btn btn-outline btn-xl">
+            <i class="fa-solid fa-list-ol"></i>
+            <span>VER MENÚ DE JUGADAS</span>
+          </a>
         </div>
 
-        <!-- Botones de Filtro -->
-        <div class="gallery-filters reveal-fade">
-          <button class="filter-btn active" data-filter="all" id="btnFilterAll">Todos</button>
-          <button class="filter-btn" data-filter="clasicos" id="btnFilterClasicos">Clásicos</button>
-          <button class="filter-btn" data-filter="fade" id="btnFilterFade">Fade</button>
-          <button class="filter-btn" data-filter="barba" id="btnFilterBarba">Barba</button>
-          <button class="filter-btn" data-filter="texturizados" id="btnFilterTexturizados">Texturizados</button>
-        </div>
-
-        <!-- Grid de Imágenes -->
-        <div class="gallery-grid">
-          <!-- Item 1 - Clasicos -->
-          <div class="gallery-item reveal-slide-up clickable" data-category="clasicos" id="galleryItem1">
-            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=600" alt="Corte Clásico Pompadour">
-            <div class="gallery-overlay">
-              <svg class="gallery-zoom-icon" viewBox="0 0 24 24">
-                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-              </svg>
-              <h3 class="gallery-title">Pompadour Clásico</h3>
-              <span class="gallery-category">Clásicos</span>
-            </div>
+        <!-- Hero Key Stats -->
+        <div class="hero-stats">
+          <div class="stat-card">
+            <div class="stat-number">+150</div>
+            <div class="stat-label">Jugadores Pro Atendidos</div>
           </div>
-
-          <!-- Item 2 - Fade -->
-          <div class="gallery-item reveal-slide-up delay-100 clickable" data-category="fade" id="galleryItem2">
-            <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&q=80&w=600" alt="Corte Mid Fade Moderno">
-            <div class="gallery-overlay">
-              <svg class="gallery-zoom-icon" viewBox="0 0 24 24">
-                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-              </svg>
-              <h3 class="gallery-title">High Skin Fade</h3>
-              <span class="gallery-category">Fade</span>
-            </div>
+          <div class="stat-divider"></div>
+          <div class="stat-card">
+            <div class="stat-number">99.8%</div>
+            <div class="stat-label">Precisión en Degradado</div>
           </div>
-
-          <!-- Item 3 - Barba -->
-          <div class="gallery-item reveal-slide-up delay-200 clickable" data-category="barba" id="galleryItem3">
-            <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&q=80&w=600" alt="Diseño de Barba y Perfilado">
-            <div class="gallery-overlay">
-              <svg class="gallery-zoom-icon" viewBox="0 0 24 24">
-                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-              </svg>
-              <h3 class="gallery-title">Perfilado De Barba</h3>
-              <span class="gallery-category">Barba</span>
-            </div>
-          </div>
-
-          <!-- Item 4 - Texturizados -->
-          <div class="gallery-item reveal-slide-up clickable" data-category="texturizados" id="galleryItem4">
-            <img src="https://images.unsplash.com/photo-1605497746445-97d1b0a9eaf4?auto=format&fit=crop&q=80&w=600" alt="Corte Crop Texturizado">
-            <div class="gallery-overlay">
-              <svg class="gallery-zoom-icon" viewBox="0 0 24 24">
-                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-              </svg>
-              <h3 class="gallery-title">Texturizado Moderno</h3>
-              <span class="gallery-category">Texturizados</span>
-            </div>
-          </div>
-
-          <!-- Item 5 - Clasicos -->
-          <div class="gallery-item reveal-slide-up delay-100 clickable" data-category="clasicos" id="galleryItem5">
-            <img src="https://images.unsplash.com/photo-1517832606589-7a598b389283?auto=format&fit=crop&q=80&w=600" alt="Corte Side Part Elegante">
-            <div class="gallery-overlay">
-              <svg class="gallery-zoom-icon" viewBox="0 0 24 24">
-                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-              </svg>
-              <h3 class="gallery-title">Raya a un Lado</h3>
-              <span class="gallery-category">Clásicos</span>
-            </div>
-          </div>
-
-          <!-- Item 6 - Barba -->
-          <div class="gallery-item reveal-slide-up delay-200 clickable" data-category="barba" id="galleryItem6">
-            <img src="https://images.unsplash.com/photo-1593702295094-aec22597af05?auto=format&fit=crop&q=80&w=600" alt="Cuidado De Barba Larga">
-            <div class="gallery-overlay">
-              <svg class="gallery-zoom-icon" viewBox="0 0 24 24">
-                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-              </svg>
-              <h3 class="gallery-title">Cuidado Full Beard</h3>
-              <span class="gallery-category">Barba</span>
-            </div>
-          </div>
-
-          <!-- Item 7 - Fade -->
-          <div class="gallery-item reveal-slide-up clickable" data-category="fade" id="galleryItem7">
-            <img src="https://images.unsplash.com/photo-1599351431247-f5094087e19b?auto=format&fit=crop&q=80&w=600" alt="Low Fade con Textura">
-            <div class="gallery-overlay">
-              <svg class="gallery-zoom-icon" viewBox="0 0 24 24">
-                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-              </svg>
-              <h3 class="gallery-title">Low Drop Fade</h3>
-              <span class="gallery-category">Fade</span>
-            </div>
-          </div>
-
-          <!-- Item 8 - Afeitado / Tradicional -->
-          <div class="gallery-item reveal-slide-up delay-100 clickable" data-category="clasicos" id="galleryItem8">
-            <img src="https://images.unsplash.com/photo-1503951458645-643d53efd90f?auto=format&fit=crop&q=80&w=600" alt="Afeitado Tradicional Navaja">
-            <div class="gallery-overlay">
-              <svg class="gallery-zoom-icon" viewBox="0 0 24 24">
-                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-              </svg>
-              <h3 class="gallery-title">Afeitado de Ritual</h3>
-              <span class="gallery-category">Clásicos</span>
-            </div>
-          </div>
-
-          <!-- Item 9 - Texturizados / Productos -->
-          <div class="gallery-item reveal-slide-up delay-200 clickable" data-category="texturizados" id="galleryItem9">
-            <img src="https://images.unsplash.com/photo-1608248597481-496100c80836?auto=format&fit=crop&q=80&w=600" alt="Estilo Texturizado Despeinado">
-            <div class="gallery-overlay">
-              <svg class="gallery-zoom-icon" viewBox="0 0 24 24">
-                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-              </svg>
-              <h3 class="gallery-title">Messy Quiff</h3>
-              <span class="gallery-category">Texturizados</span>
-            </div>
+          <div class="stat-divider"></div>
+          <div class="stat-card">
+            <div class="stat-number">4.9 <i class="fa-solid fa-star text-gold"></i></div>
+            <div class="stat-label">Valoración Primera División</div>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- LIGHTBOX MODAL (PANTALLA COMPLETA) -->
-    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizador de imágenes">
-      <div class="lightbox-content-wrapper">
-        <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar visualizador">&times;</button>
-        <button class="lightbox-arrow lightbox-prev" id="lightboxPrev" aria-label="Imagen anterior">&#10094;</button>
-        <img class="lightbox-img" src="" alt="Corte en alta resolución" id="lightboxImg">
-        <button class="lightbox-arrow lightbox-next" id="lightboxNext" aria-label="Siguiente imagen">&#10095;</button>
-        <div class="lightbox-caption">
-          <h3 class="lightbox-title" id="lightboxTitle">Título del Corte</h3>
+      <div class="hero-visual">
+        <div class="hero-card-showcase">
+          <div class="hero-card-glow"></div>
+          <div class="hero-image-wrapper">
+            <img src="assets/images/hero_barber.jpg" alt="Baller & Co Barbershop Interior" class="hero-main-img"
+              onerror="this.src='https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&q=80'">
+            <div class="hero-img-badge">
+              <span class="badge-icon"><i class="fa-solid fa-crown"></i></span>
+              <div>
+                <strong>Vestuario Oficial</strong>
+                <span>Ambiente Exclusivo 5 Estrellas</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Baller Card Mini -->
+          <div class="floating-player-badge animate-float">
+            <div class="player-avatar">
+              <i class="fa-solid fa-trophy"></i>
+            </div>
+            <div class="player-info">
+              <div class="player-rating">OVR 99</div>
+              <div class="player-title">Ballon d'Or Cut</div>
+              <div class="player-sub">Degradado Skin Fade + Barba</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- 4. SOBRE NOSOTROS (ESTADÍSTICAS Y EQUIPO) -->
-    <section class="about-section section-padding" id="nosotros">
-      <div class="container">
-        <div class="about-layout">
-          <!-- Imagen izquierda con marco dorado decorativo -->
-          <div class="about-img-container reveal-slide-left" id="aboutImgContainer">
-            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=800" alt="Interior de la Barbería Charly Barber Shop" class="about-img">
-            <div class="about-img-decor"></div>
-          </div>
+  <!-- Match Day Ticker -->
+  <div class="match-ticker">
+    <div class="ticker-track">
+      <span class="ticker-item"><i class="fa-solid fa-bolt text-turf"></i> SKIN FADE DE ÉLITE</span>
+      <span class="ticker-item"><i class="fa-solid fa-star text-gold"></i> TRATAMIENTO DE ORO 24K</span>
+      <span class="ticker-item"><i class="fa-regular fa-futbol text-turf"></i> PS5 & SPORTS LOUNGE</span>
+      <span class="ticker-item"><i class="fa-solid fa-scissors text-gold"></i> PERFILADO QUIRÚRGICO DE BARBA</span>
+      <span class="ticker-item"><i class="fa-solid fa-bolt text-turf"></i> PLATINADOS & TINTES PRO</span>
+      <span class="ticker-item"><i class="fa-solid fa-crown text-gold"></i> SERVICIO VIP DE VESTUARIO</span>
+      <span class="ticker-item"><i class="fa-solid fa-bolt text-turf"></i> SKIN FADE DE ÉLITE</span>
+      <span class="ticker-item"><i class="fa-solid fa-star text-gold"></i> TRATAMIENTO DE ORO 24K</span>
+      <span class="ticker-item"><i class="fa-regular fa-futbol text-turf"></i> PS5 & SPORTS LOUNGE</span>
+      <span class="ticker-item"><i class="fa-solid fa-scissors text-gold"></i> PERFILADO QUIRÚRGICO DE BARBA</span>
+    </div>
+  </div>
 
-          <!-- Contenido derecha -->
-          <div class="reveal-slide-right" id="aboutContent">
-            <div class="section-header" style="text-align: left; margin-bottom: 30px;">
-              <span class="section-subtitle">Nuestra Historia</span>
-              <h2 class="section-title" style="display: block; padding-bottom: 10px;">Charly Barber Shop</h2>
-            </div>
-            <div class="about-story">
-              <h3>El Arte Y La Tradición Desde 2018</h3>
-              <p>Charly Barber Shop nació con la visión de revivir el antiguo ritual de la barbería tradicional combinándolo con las técnicas más modernas de estilismo masculino. Ubicada en una zona privilegiada, nuestra misión es ofrecer un espacio exclusivo de relajación y cuidado personal para caballeros.</p>
-              <p>Cada corte y afeitado en nuestra barbería es tratado como una obra de arte. Utilizamos únicamente productos de marcas premium internacionales para garantizar un acabado perfecto y el cuidado de tu piel y cabello.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3 Estadísticas Animadas con Contadores -->
-        <div class="stats-grid" id="statsGrid">
-          <div class="stat-item">
-            <span class="stat-number" data-target="500" data-suffix="+" id="statClients">0</span>
-            <span class="stat-label">Clientes Satisfechos</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number" data-target="8" data-suffix="" id="statYears">0</span>
-            <span class="stat-label">Años De Experiencia</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number" data-target="3" data-suffix="" id="statBarbers">0</span>
-            <span class="stat-label">Barberos Expertos</span>
-          </div>
-        </div>
-
-        <!-- Equipo de Barberos -->
-        <h3 class="team-title reveal-fade">Nuestros Barberos</h3>
-        <div class="team-grid">
-          <!-- Barbero 1 -->
-          <article class="team-member reveal-slide-up" id="teamMember1">
-            <div class="team-photo-wrapper">
-              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=600" alt="Carlos Charly, Master Barber" class="team-photo">
-            </div>
-            <div class="team-info">
-              <h4 class="team-name">Carlos "Charly"</h4>
-              <p class="team-role">Fundador & Master Barber</p>
-            </div>
-          </article>
-
-          <!-- Barbero 2 -->
-          <article class="team-member reveal-slide-up delay-100" id="teamMember2">
-            <div class="team-photo-wrapper">
-              <img src="https://images.unsplash.com/photo-1618077360395-f3068be8e001?auto=format&fit=crop&q=80&w=600" alt="Mateo, Fade Master" class="team-photo">
-            </div>
-            <div class="team-info">
-              <h4 class="team-name">Mateo</h4>
-              <p class="team-role">The Fade Master</p>
-            </div>
-          </article>
-
-          <!-- Barbero 3 -->
-          <article class="team-member reveal-slide-up delay-200" id="teamMember3">
-            <div class="team-photo-wrapper">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600" alt="Alex, Blade Stylist" class="team-photo">
-            </div>
-            <div class="team-info">
-              <h4 class="team-name">Alex</h4>
-              <p class="team-role">Blade Stylist</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. SECCIÓN CONTACTO (FORMULARIO, REDES, MAPA, TABLA HORARIOS) -->
-    <section class="contact-section section-padding" id="contacto">
-      <div class="container">
-        <div class="section-header reveal-fade">
-          <span class="section-subtitle">Agenda tu espacio</span>
-          <h2 class="section-title">Contacto & Reservas</h2>
-        </div>
-
-        <div class="contact-layout">
-          <!-- Columna Info -->
-          <div class="contact-info-column reveal-slide-left" id="contactInfoColumn">
-            <!-- Detalles de Contacto -->
-            <div class="contact-details">
-              <div class="contact-detail-item">
-                <div class="contact-icon-wrapper">
-                  <svg class="contact-icon" viewBox="0 0 24 24">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                  </svg>
-                </div>
-                <div class="contact-text">
-                  <h4>Ubicación</h4>
-                  <p>Av. Reforma 405, Colonia Juárez, Ciudad de México, CP 06600</p>
-                </div>
-              </div>
-
-              <div class="contact-detail-item">
-                <div class="contact-icon-wrapper">
-                  <svg class="contact-icon" viewBox="0 0 24 24">
-                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                  </svg>
-                </div>
-                <div class="contact-text">
-                  <h4>Teléfono</h4>
-                  <p><a href="tel:+525512345678" id="contactPhoneLink">+52 55 1234 5678</a></p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Horarios de Atención -->
-            <div class="contact-details">
-              <h3 class="team-title" style="margin-bottom: 15px; font-size: 1.2rem;">Horarios de Atención</h3>
-              <table class="hours-table" id="hoursTable">
-                <tbody>
-                  <tr>
-                    <td class="hours-day">Lunes a Viernes</td>
-                    <td class="hours-time">09:00 AM - 09:00 PM</td>
-                  </tr>
-                  <tr class="highlight">
-                    <td class="hours-day">Sábado</td>
-                    <td class="hours-time">09:00 AM - 07:00 PM</td>
-                  </tr>
-                  <tr>
-                    <td class="hours-day">Domingo</td>
-                    <td class="hours-time">10:00 AM - 04:00 PM</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <!-- Redes Sociales -->
-            <div class="contact-details">
-              <h3 class="team-title" style="margin-bottom: 15px; font-size: 1.2rem;">Síguenos</h3>
-              <div class="social-links">
-                <!-- Instagram -->
-                <a href="https://instagram.com" class="social-icon-wrapper" target="_blank" rel="noopener noreferrer" aria-label="Sigue a Charly Barber Shop en Instagram" id="socialInsta">
-                  <svg class="social-icon" viewBox="0 0 24 24">
-                    <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8a3.6 3.6 0 0 0 3.6 3.6h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6zm4.4 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm4.8-2.3a.8.8 0 1 1 0 1.6.8.8 0 0 1 0-1.6z"/>
-                  </svg>
-                </a>
-                <!-- Facebook -->
-                <a href="https://facebook.com" class="social-icon-wrapper" target="_blank" rel="noopener noreferrer" aria-label="Sigue a Charly Barber Shop en Facebook" id="socialFb">
-                  <svg class="social-icon" viewBox="0 0 24 24">
-                    <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1V12h3v3h-3v6.8c4.56-.93 8-4.96 8-9.8z"/>
-                  </svg>
-                </a>
-                <!-- TikTok -->
-                <a href="https://tiktok.com" class="social-icon-wrapper" target="_blank" rel="noopener noreferrer" aria-label="Sigue a Charly Barber Shop en TikTok" id="socialTiktok">
-                  <svg class="social-icon" viewBox="0 0 24 24">
-                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.59 4.23.85.99 2 1.69 3.29 1.94v3.91c-1.12-.13-2.23-.59-3.18-1.22-.65-.44-1.2-1.01-1.62-1.67V14.5c.02 1.6-.35 3.21-1.12 4.6-1.12 1.99-3.15 3.48-5.41 3.84-2.52.4-5.2-.24-7.23-1.82-2.18-1.67-3.41-4.38-3.26-7.13.13-2.69 1.7-5.18 4.09-6.42 1.83-.97 3.97-1.24 5.97-.73v4.06c-1.11-.31-2.31-.22-3.35.3-.92.48-1.63 1.34-1.92 2.34-.33 1.04-.2 2.18.35 3.12.64 1.04 1.77 1.74 2.97 1.81 1.35.08 2.7-.58 3.45-1.71.55-.78.78-1.76.74-2.72V.02z"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Columna Formulario -->
-          <div class="contact-form-wrapper reveal-slide-right" id="contactFormWrapper">
-            <h3 class="contact-form-title">Envíanos un mensaje</h3>
-            <form id="contactForm" novalidate>
-              <div class="form-group">
-                <input type="text" class="form-control" id="name" placeholder="Nombre completo *" required>
-              </div>
-              <div class="form-group">
-                <input type="email" class="form-control" id="email" placeholder="Correo electrónico *" required>
-              </div>
-              <div class="form-group">
-                <input type="tel" class="form-control" id="phone" placeholder="Teléfono / Celular *" required>
-              </div>
-              <div class="form-group">
-                <textarea class="form-control" id="message" placeholder="¿Qué servicio te interesa y en qué fecha/hora deseas agendar? *" required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary" style="width: 100%;" id="btnSubmitForm">Reservar Cita</button>
-              <div class="form-feedback" id="formFeedback"></div>
-            </form>
-          </div>
-        </div>
-
-        <!-- Mapa de Google Maps Oscurecido -->
-        <div class="map-container reveal-fade" id="mapContainer">
-          <!-- Iframe embebido de Google Maps configurado en la ubicación de Reforma CDMX -->
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.6289299499877!2d-99.16487162391031!3d19.428468781892183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff35f5555555%3A0x8085f385c5a7abff!2sAv.%20Paseo%20de%20la%20Reforma%2C%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1700000000000!5m2!1ses-419!2smx" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Ubicación de Charly Barber Shop en Ciudad de México">
-          </iframe>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
+  <!-- Services / The Playbook Section -->
+  <section class="section services-section" id="servicios">
     <div class="container">
-      <div class="footer-layout">
-        <!-- Columna 1 Marca -->
-        <div class="footer-brand">
-          <a href="#inicio" class="logo" id="footerLogo">
-            <svg class="logo-icon" viewBox="0 0 24 24">
-              <path d="M19 3c-1.8 0-3.4 1.2-3.8 2.9l-3.2 2.6-3.2-2.6C8.4 4.2 6.8 3 5 3 2.2 3 0 5.2 0 8s2.2 5 5 5c1 0 1.9-.3 2.7-.8l2.3 2.8-2.3 2.8c-.8-.5-1.7-.8-2.7-.8-2.8 0-5 2.2-5 5s2.2 5 5 5c1.8 0 3.4-1.2 3.8-2.9l3.2-2.6 3.2 2.6c.4 1.7 2 2.9 3.8 2.9 2.8 0 5-2.2 5-5s-2.2-5-5-5c-1 0-1.9.3-2.7.8l-2.3-2.8 2.3-2.8c.8.5 1.7.8 2.7.8 2.8 0 5-2.2 5-5s-2.2-5-5-5zm-14 8c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm14 10c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm0-13c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm-14 13c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/>
-            </svg>
-            <span class="logo-text">Charly <span>Barber</span></span>
-          </a>
-          <p>Ofreciendo cortes de cabello y afeitados tradicionales premium desde 2018. El lugar idóneo para caballeros sofisticados.</p>
+      <div class="section-header text-center">
+        <div class="section-tag">EL MENÚ TÁCTICO</div>
+        <h2 class="section-title">CORTES Y TRATAMIENTOS <span class="text-gradient-gold">DE PRIMERA DIVISIÓN</span></h2>
+        <p class="section-subtitle">Cada servicio incluye toalla caliente aromatizada, lavado capilar estimulante y café
+          espresso o bebida en el Sports Lounge.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service 1 -->
+        <div class="service-card" data-service-id="fade-galactico" data-name="El Galáctico Skin Fade" data-price="25">
+          <div class="service-badge">MÁS POPULAR</div>
+          <div class="service-icon">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <div class="service-header">
+            <h3 class="service-name">El Galáctico Skin Fade</h3>
+            <div class="service-price">$25 <span class="price-time">/ 40 min</span></div>
+          </div>
+          <p class="service-desc">
+            Degradado a cero pulido al detalle (Low, Mid o High Fade), textura superior personalizada, perfilado
+            milimétrico de patillas y cuello con navaja japonesa.
+          </p>
+          <ul class="service-features">
+            <li><i class="fa-solid fa-check text-turf"></i> Asesoría de visagismo según rostro</li>
+            <li><i class="fa-solid fa-check text-turf"></i> Lavado capilar con tónico mentolado</li>
+            <li><i class="fa-solid fa-check text-turf"></i> Peinado con pomada mate anti-sudor</li>
+          </ul>
+          <button class="btn btn-card-select" onclick="selectServiceForBooking('El Galáctico Skin Fade', 25, '40 min')">
+            <span>Seleccionar en Formación</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
         </div>
 
-        <!-- Columna 2 Links -->
-        <div>
-          <h4 class="footer-column-title">Enlaces</h4>
-          <ul class="footer-menu">
-            <li><a href="#inicio" class="footer-menu-link">Inicio</a></li>
-            <li><a href="#servicios" class="footer-menu-link">Servicios</a></li>
-            <li><a href="#galeria" class="footer-menu-link">Galería</a></li>
-            <li><a href="#nosotros" class="footer-menu-link">Nosotros</a></li>
-            <li><a href="#contacto" class="footer-menu-link">Contacto</a></li>
+        <!-- Service 2 -->
+        <div class="service-card featured-service" data-service-id="golden-touch"
+          data-name="The Ballon d'Or VIP Experience" data-price="45">
+          <div class="service-badge vip-badge"><i class="fa-solid fa-crown"></i> FULL TITULAR</div>
+          <div class="service-icon gold-icon">
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <div class="service-header">
+            <h3 class="service-name">The Ballon d'Or VIP</h3>
+            <div class="service-price text-gold">$45 <span class="price-time">/ 60 min</span></div>
+          </div>
+          <p class="service-desc">
+            La experiencia completa de jugador estrella. Corte de pelo premium + arreglo y perfilado de barba +
+            mascarilla facial de oro 24k + toalla caliente de eucalipto.
+          </p>
+          <ul class="service-features">
+            <li><i class="fa-solid fa-check text-gold"></i> Corte de Élite + Arreglo de Barba</li>
+            <li><i class="fa-solid fa-check text-gold"></i> Mascarilla limpiadora de poros + Oro</li>
+            <li><i class="fa-solid fa-check text-gold"></i> Masaje relajante craneal y facial</li>
+            <li><i class="fa-solid fa-check text-gold"></i> Bebida cortesía en el Lounge</li>
           </ul>
+          <button class="btn btn-primary btn-glow full-width"
+            onclick="selectServiceForBooking('The Ballon d\'Or VIP', 45, '60 min')">
+            <span>Elegir Experiencia VIP</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
         </div>
 
-        <!-- Columna 3 Páginas Dedicadas -->
-        <div>
-          <h4 class="footer-column-title">Secciones</h4>
-          <ul class="footer-menu">
-            <li><a href="pages/servicios.html" class="footer-menu-link">Nuestros Servicios</a></li>
-            <li><a href="pages/galeria.html" class="footer-menu-link">Galería de Cortes</a></li>
-            <li><a href="pages/nosotros.html" class="footer-menu-link">Sobre Nosotros</a></li>
-            <li><a href="pages/contacto.html" class="footer-menu-link">Reservas & Horarios</a></li>
+        <!-- Service 3 -->
+        <div class="service-card" data-service-id="barba-capitan" data-name="The Captain's Beard Sculpt"
+          data-price="20">
+          <div class="service-badge">PERFILADO</div>
+          <div class="service-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <div class="service-header">
+            <h3 class="service-name">Barba de Capitán & Taper</h3>
+            <div class="service-price">$20 <span class="price-time">/ 30 min</span></div>
+          </div>
+          <p class="service-desc">
+            Esculpido de barba simétrica, degradado de patillas, líneas afeitadas a fuego con navaja y bálsamo
+            hidratante para máximo porte de líder de vestuario.
+          </p>
+          <ul class="service-features">
+            <li><i class="fa-solid fa-check text-turf"></i> Tratamiento de vapor y toalla caliente</li>
+            <li><i class="fa-solid fa-check text-turf"></i> Aceite hidratante con aroma amaderado</li>
+            <li><i class="fa-solid fa-check text-turf"></i> Definición de líneas y pómulos</li>
           </ul>
+          <button class="btn btn-card-select"
+            onclick="selectServiceForBooking('Barba de Capitán & Taper', 20, '30 min')">
+            <span>Seleccionar en Formación</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
         </div>
 
-        <!-- Columna 4 Contacto Rápido -->
-        <div>
-          <h4 class="footer-column-title">Contacto</h4>
-          <ul class="footer-menu">
-            <li class="footer-menu-link" style="padding-left: 0; pointer-events: none;">Av. Reforma 405, CDMX</li>
-            <li><a href="tel:+525512345678" class="footer-menu-link" style="padding-left: 0;">+52 55 1234 5678</a></li>
-            <li><a href="mailto:info@charlybarbershop.com" class="footer-menu-link" style="padding-left: 0;">info@charlybarbershop.com</a></li>
+        <!-- Service 4 -->
+        <div class="service-card" data-service-id="striker-design" data-name="Striker Razor & Freestyle Design"
+          data-price="30">
+          <div class="service-badge">CREATIVIDAD</div>
+          <div class="service-icon">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+          <div class="service-header">
+            <h3 class="service-name">Diseños de Cancha & Rayas</h3>
+            <div class="service-price">$30 <span class="price-time">/ 45 min</span></div>
+          </div>
+          <p class="service-desc">
+            Corte degradado con líneas laterales gemelas, rayos, grecas geométricas o dorsal favorito grabado con navaja
+            de precisión.
+          </p>
+          <ul class="service-features">
+            <li><i class="fa-solid fa-check text-turf"></i> Arte capilar personalizado a mano alzada</li>
+            <li><i class="fa-solid fa-check text-turf"></i> Tinte o realce de líneas opcional</li>
+            <li><i class="fa-solid fa-check text-turf"></i> Fijador de alta fijación</li>
           </ul>
+          <button class="btn btn-card-select"
+            onclick="selectServiceForBooking('Diseños de Cancha & Rayas', 30, '45 min')">
+            <span>Seleccionar en Formación</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card" data-service-id="platinado-pro" data-name="Platinum Super Saiyan / Color Pro"
+          data-price="60">
+          <div class="service-badge color-badge">COLORACIÓN</div>
+          <div class="service-icon">
+            <i class="fa-solid fa-fire-flame-curved"></i>
+          </div>
+          <div class="service-header">
+            <h3 class="service-name">Platinado Polar / Color Crack</h3>
+            <div class="service-price">$60 <span class="price-time">/ 90 min</span></div>
+          </div>
+          <p class="service-desc">
+            Decoloración profesional de alta protección capilar (Plex). Platinado blanco nieve, cenizo o tonos fantasía
+            estilo cracks de Champions.
+          </p>
+          <ul class="service-features">
+            <li><i class="fa-solid fa-check text-turf"></i> Decoloración con protector de fibra</li>
+            <li><i class="fa-solid fa-check text-turf"></i> Matizado y corte de acabado incluido</li>
+            <li><i class="fa-solid fa-check text-turf"></i> Tratamiento sellador de brillo</li>
+          </ul>
+          <button class="btn btn-card-select"
+            onclick="selectServiceForBooking('Platinado Polar / Color Crack', 60, '90 min')">
+            <span>Seleccionar en Formación</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card" data-service-id="junior-cantera" data-name="Junior Cantera Cut (Sub-16)"
+          data-price="18">
+          <div class="service-badge">CANTERA</div>
+          <div class="service-icon">
+            <i class="fa-solid fa-child"></i>
+          </div>
+          <div class="service-header">
+            <h3 class="service-name">Corte Cantera (Sub-16)</h3>
+            <div class="service-price">$18 <span class="price-time">/ 35 min</span></div>
+          </div>
+          <p class="service-desc">
+            Para las futuras promesas del fútbol. Cortes modernos, degradados limpios y líneas de sus ídolos favoritos
+            con la mejor onda.
+          </p>
+          <ul class="service-features">
+            <li><i class="fa-solid fa-check text-turf"></i> Corte según su jugador preferido</li>
+            <li><i class="fa-solid fa-check text-turf"></i> Partida de FIFA en PS5 de cortesía</li>
+            <li><i class="fa-solid fa-check text-turf"></i> Dulce o bebida deportiva de regalo</li>
+          </ul>
+          <button class="btn btn-card-select" onclick="selectServiceForBooking('Corte Cantera (Sub-16)', 18, '35 min')">
+            <span>Seleccionar en Formación</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery / Hall of Fame Section -->
+  <section class="section gallery-section" id="estilos">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag">EL VESTIDOR DE CRACKS</div>
+        <h2 class="section-title">GALERÍA DE <span class="text-gradient-turf">ESTILOS EN CANCHA</span></h2>
+        <p class="section-subtitle">Explora los looks más pedidos por los jugadores profesionales en las mejores ligas
+          del mundo.</p>
+
+        <!-- Filter Tabs -->
+        <div class="gallery-filters" id="galleryFilters">
+          <button class="filter-btn active" data-filter="all">Todos los Estilos</button>
+          <button class="filter-btn" data-filter="fade">Degradados & Fades</button>
+          <button class="filter-btn" data-filter="platinado">Platinados & Texturas</button>
+          <button class="filter-btn" data-filter="diseño">Rayas & Diseños</button>
+          <button class="filter-btn" data-filter="lounge">Instalaciones VIP</button>
         </div>
       </div>
 
-      <!-- Copyright -->
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- Card 1 -->
+        <div class="gallery-item" data-category="fade">
+          <div class="gallery-card">
+            <img src="assets/images/haircut_fade.jpg" alt="Skin Fade Pro"
+              onerror="this.src='https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=800&q=80'">
+            <div class="gallery-info">
+              <span class="gallery-tag">MID SKIN FADE</span>
+              <h4>The Number 10 Classic</h4>
+              <p>Degradado medio con navaja y textura superior desfilada.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="gallery-item" data-category="platinado">
+          <div class="gallery-card">
+            <img src="assets/images/haircut_platinum.jpg" alt="Platinum Blonde Razor Cut"
+              onerror="this.src='https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=800&q=80'">
+            <div class="gallery-info">
+              <span class="gallery-tag">PLATINADO + DISEÑO</span>
+              <h4>The Galáctico Ice</h4>
+              <p>Tono blanco polar con doble rayo lateral afilado.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="gallery-item" data-category="lounge">
+          <div class="gallery-card">
+            <img src="assets/images/lounge_vip.jpg" alt="Champions Lounge VIP"
+              onerror="this.src='https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=800&q=80'">
+            <div class="gallery-info">
+              <span class="gallery-tag">EXPERIENCIA VIP</span>
+              <h4>Champions Lounge & PS5</h4>
+              <p>Tu previa o post-corte con partidos en vivo y consolas de última generación.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="gallery-item" data-category="fade">
+          <div class="gallery-card">
+            <img src="assets/images/hero_barber.jpg" alt="Estación de Trabajo de Lujo"
+              onerror="this.src='https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=800&q=80'">
+            <div class="gallery-info">
+              <span class="gallery-tag">ESTACIÓN ÉLITE</span>
+              <h4>Sillones Diamond Recaro</h4>
+              <p>Máximo confort con herramientas doradas de precisión milimétrica.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Barbers / DT Team (Ultimate Team Cards) -->
+  <section class="section team-section" id="barberos">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag">NUESTRO 11 TITULAR</div>
+        <h2 class="section-title">LOS <span class="text-gradient-gold">DIRECTORES TÉCNICOS</span> DE TU LOOK</h2>
+        <p class="section-subtitle">Maestros de la tijera y la máquina con trayectoria internacional peinando a figuras
+          de Primera División.</p>
+      </div>
+
+      <div class="barbers-grid">
+        <!-- Barber 1: Ultimate Team Card -->
+        <div class="fut-card-wrapper" onclick="selectBarberForBooking('Matías «El Mago» Rossi')">
+          <div class="fut-card toty-card">
+            <div class="fut-card-inner">
+              <div class="card-header">
+                <div class="rating-num">99</div>
+                <div class="card-pos">DT</div>
+                <div class="card-flag">🇦🇷</div>
+                <div class="card-club"><i class="fa-solid fa-scissors"></i></div>
+              </div>
+              <div class="card-avatar">
+                <div class="avatar-icon"><i class="fa-solid fa-user-ninja"></i></div>
+              </div>
+              <div class="card-info">
+                <h3 class="barber-name">MATÍAS ROSSI</h3>
+                <div class="barber-alias">«El Mago del Fade»</div>
+                <div class="barber-stats">
+                  <div class="stat-row">
+                    <span class="stat-k">FAD <strong>99</strong></span>
+                    <span class="stat-k">NAV <strong>98</strong></span>
+                    <span class="stat-k">DIS <strong>96</strong></span>
+                  </div>
+                  <div class="stat-row">
+                    <span class="stat-k">VEL <strong>95</strong></span>
+                    <span class="stat-k">STY <strong>99</strong></span>
+                    <span class="stat-k">EXP <strong>10a</strong></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-card-pick">
+              <i class="fa-solid fa-hand-pointer"></i> Elegir a Matías
+            </button>
+          </div>
+        </div>
+
+        <!-- Barber 2: Ultimate Team Card -->
+        <div class="fut-card-wrapper" onclick="selectBarberForBooking('Lucas «The Barber King» Silva')">
+          <div class="fut-card gold-fut-card">
+            <div class="fut-card-inner">
+              <div class="card-header">
+                <div class="rating-num">98</div>
+                <div class="card-pos">DT</div>
+                <div class="card-flag">🇧🇷</div>
+                <div class="card-club"><i class="fa-solid fa-trophy"></i></div>
+              </div>
+              <div class="card-avatar">
+                <div class="avatar-icon"><i class="fa-solid fa-user-tie"></i></div>
+              </div>
+              <div class="card-info">
+                <h3 class="barber-name">LUCAS SILVA</h3>
+                <div class="barber-alias">«The Freestyle King»</div>
+                <div class="barber-stats">
+                  <div class="stat-row">
+                    <span class="stat-k">DIS <strong>99</strong></span>
+                    <span class="stat-k">COL <strong>98</strong></span>
+                    <span class="stat-k">FAD <strong>97</strong></span>
+                  </div>
+                  <div class="stat-row">
+                    <span class="stat-k">TEX <strong>96</strong></span>
+                    <span class="stat-k">STY <strong>98</strong></span>
+                    <span class="stat-k">EXP <strong>8a</strong></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-card-pick">
+              <i class="fa-solid fa-hand-pointer"></i> Elegir a Lucas
+            </button>
+          </div>
+        </div>
+
+        <!-- Barber 3: Ultimate Team Card -->
+        <div class="fut-card-wrapper" onclick="selectBarberForBooking('Diego «El Capitán» Mendoza')">
+          <div class="fut-card hero-fut-card">
+            <div class="fut-card-inner">
+              <div class="card-header">
+                <div class="rating-num">97</div>
+                <div class="card-pos">DT</div>
+                <div class="card-flag">🇨🇴</div>
+                <div class="card-club"><i class="fa-solid fa-shield-halved"></i></div>
+              </div>
+              <div class="card-avatar">
+                <div class="avatar-icon"><i class="fa-solid fa-user-shield"></i></div>
+              </div>
+              <div class="card-info">
+                <h3 class="barber-name">DIEGO MENDOZA</h3>
+                <div class="barber-alias">«Especialista en Barbas»</div>
+                <div class="barber-stats">
+                  <div class="stat-row">
+                    <span class="stat-k">BRB <strong>99</strong></span>
+                    <span class="stat-k">NAV <strong>99</strong></span>
+                    <span class="stat-k">VIP <strong>98</strong></span>
+                  </div>
+                  <div class="stat-row">
+                    <span class="stat-k">FAD <strong>95</strong></span>
+                    <span class="stat-k">REL <strong>97</strong></span>
+                    <span class="stat-k">EXP <strong>12a</strong></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-card-pick">
+              <i class="fa-solid fa-hand-pointer"></i> Elegir a Diego
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lounge VIP & Experience Section -->
+  <section class="section lounge-section" id="lounge">
+    <div class="container">
+      <div class="lounge-box">
+        <div class="lounge-grid">
+          <div class="lounge-content">
+            <div class="section-tag text-gold">THE BALLER'S CLUBHOUSE</div>
+            <h2 class="lounge-title">MÁS QUE UN CORTE, <br><span class="text-gradient-turf">EL VESTUARIO DE LOS
+                CAMPEONES</span></h2>
+            <p class="lounge-text">
+              Diseñamos un espacio donde la previa y el post-corte se viven como en una concentración de final de copa.
+            </p>
+
+            <div class="amenities-list">
+              <div class="amenity-item">
+                <div class="amenity-icon"><i class="fa-brands fa-playstation"></i></div>
+                <div>
+                  <h4>Zona PlayStation 5 & EA FC 25</h4>
+                  <p>Retas 1v1 en pantallas 4K OLED mientras esperas o disfrutas tu turno.</p>
+                </div>
+              </div>
+              <div class="amenity-item">
+                <div class="amenity-icon"><i class="fa-solid fa-tv"></i></div>
+                <div>
+                  <h4>Transmisión de Partidos en Vivo</h4>
+                  <p>Champions League, Premier League, Libertadores y los mejores clásicos.</p>
+                </div>
+              </div>
+              <div class="amenity-item">
+                <div class="amenity-icon"><i class="fa-solid fa-mug-hot"></i></div>
+                <div>
+                  <h4>Barra de Bebidas VIP</h4>
+                  <p>Café gourmet italiano, bebidas energéticas, cervezas artesanales y agua fría.</p>
+                </div>
+              </div>
+              <div class="amenity-item">
+                <div class="amenity-icon"><i class="fa-solid fa-shirt"></i></div>
+                <div>
+                  <h4>Museo de Camisetas Autografiadas</h4>
+                  <p>Reliquias firmadas por los cracks que han pasado por nuestros sillones.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lounge-image-col">
+            <div class="lounge-frame">
+              <img src="assets/images/lounge_vip.jpg" alt="Futbolistas Lounge VIP" class="lounge-img"
+                onerror="this.src='https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=800&q=80'">
+              <div class="live-match-badge">
+                <span class="badge-live-dot"></span> EN VIVO: EL CLÁSICO EN PANTALLA GIGANTE
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Match Day Booking / Turnos Section -->
+  <section class="section booking-section" id="booking">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag">SISTEMA DE CONVOCATORIA</div>
+        <h2 class="section-title">RESERVA TU <span class="text-gradient-gold">ENTRADA AL VESTUARIO</span></h2>
+        <p class="section-subtitle">Completa los datos de tu partido y genera tu Ticket de Acceso VIP instantáneo.</p>
+      </div>
+
+      <div class="booking-grid">
+        <!-- Left: Booking Form -->
+        <div class="booking-form-card">
+          <form id="matchBookingForm" onsubmit="handleBookingSubmit(event)">
+
+            <!-- Step 1: Client Info -->
+            <div class="form-step">
+              <div class="step-title">
+                <span class="step-num">1</span>
+                <h4>Ficha del Jugador</h4>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="playerName">Nombre y Apellido / Apodo:</label>
+                  <div class="input-with-icon">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="playerName" placeholder="Ej. Carlos «El Rayo» Pérez" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="playerPhone">WhatsApp para Confirmación:</label>
+                  <div class="input-with-icon">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <input type="tel" id="playerPhone" placeholder="Ej. +54 9 11 2345 6789" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2: Service Selection -->
+            <div class="form-step">
+              <div class="step-title">
+                <span class="step-num">2</span>
+                <h4>Estrategia / Tipo de Corte</h4>
+              </div>
+              <div class="form-group">
+                <select id="serviceSelect" class="styled-select" required onchange="updateTicketSummary()">
+                  <option value="" disabled selected>Selecciona tu Jugada</option>
+                  <option value="El Galáctico Skin Fade" data-price="25">El Galáctico Skin Fade ($25 USD)</option>
+                  <option value="The Ballon d'Or VIP" data-price="45">The Ballon d'Or VIP Experience ($45 USD)</option>
+                  <option value="Barba de Capitán & Taper" data-price="20">Barba de Capitán & Taper ($20 USD)</option>
+                  <option value="Diseños de Cancha & Rayas" data-price="30">Diseños de Cancha & Rayas ($30 USD)</option>
+                  <option value="Platinado Polar / Color Crack" data-price="60">Platinado Polar / Color Crack ($60 USD)
+                  </option>
+                  <option value="Corte Cantera (Sub-16)" data-price="18">Corte Cantera Sub-16 ($18 USD)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Step 3: Barber Selection -->
+            <div class="form-step">
+              <div class="step-title">
+                <span class="step-num">3</span>
+                <h4>Director Técnico (Barbero)</h4>
+              </div>
+              <div class="barber-select-pills" id="barberPills">
+                <label class="barber-pill">
+                  <input type="radio" name="barberChoice" value="Matías «El Mago» Rossi" checked
+                    onchange="updateTicketSummary()">
+                  <div class="pill-content">
+                    <span class="pill-avatar">🇦🇷</span>
+                    <div>
+                      <strong>Matías Rossi</strong>
+                      <small>Rating 99 • Fades</small>
+                    </div>
+                  </div>
+                </label>
+                <label class="barber-pill">
+                  <input type="radio" name="barberChoice" value="Lucas «The Barber King» Silva"
+                    onchange="updateTicketSummary()">
+                  <div class="pill-content">
+                    <span class="pill-avatar">🇧🇷</span>
+                    <div>
+                      <strong>Lucas Silva</strong>
+                      <small>Rating 98 • Diseños</small>
+                    </div>
+                  </div>
+                </label>
+                <label class="barber-pill">
+                  <input type="radio" name="barberChoice" value="Diego «El Capitán» Mendoza"
+                    onchange="updateTicketSummary()">
+                  <div class="pill-content">
+                    <span class="pill-avatar">🇨🇴</span>
+                    <div>
+                      <strong>Diego Mendoza</strong>
+                      <small>Rating 97 • Barbas</small>
+                    </div>
+                  </div>
+                </label>
+                <label class="barber-pill">
+                  <input type="radio" name="barberChoice" value="Cualquier DT Disponible (Prioridad)"
+                    onchange="updateTicketSummary()">
+                  <div class="pill-content">
+                    <span class="pill-avatar">⚡</span>
+                    <div>
+                      <strong>Primer DT Libre</strong>
+                      <small>Máxima Rapidez</small>
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Step 4: Date & Time -->
+            <div class="form-step">
+              <div class="step-title">
+                <span class="step-num">4</span>
+                <h4>Fecha y Minuto del Partido</h4>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="matchDate">Día del Partido:</label>
+                  <input type="date" id="matchDate" required onchange="updateTicketSummary()">
+                </div>
+                <div class="form-group">
+                  <label for="matchTime">Horario:</label>
+                  <select id="matchTime" class="styled-select" required onchange="updateTicketSummary()">
+                    <option value="10:00 AM">10:00 AM (Apertura)</option>
+                    <option value="11:30 AM">11:30 AM</option>
+                    <option value="01:00 PM">01:00 PM</option>
+                    <option value="03:00 PM">03:00 PM</option>
+                    <option value="04:30 PM">04:30 PM</option>
+                    <option value="06:00 PM">06:00 PM (Horario Central)</option>
+                    <option value="07:30 PM">07:30 PM</option>
+                    <option value="08:30 PM">08:30 PM (Cierre Nocturno)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 5: Match Extras (Checkboxes) -->
+            <div class="form-step">
+              <div class="step-title">
+                <span class="step-num">5</span>
+                <h4>Extras de Vestuario (Opcional)</h4>
+              </div>
+              <div class="extras-grid">
+                <label class="extra-checkbox">
+                  <input type="checkbox" id="extraRayita" data-extra-price="5" onchange="updateTicketSummary()">
+                  <div class="extra-box">
+                    <div class="extra-name">+ Rayita / Greca Lateral</div>
+                    <div class="extra-cost">+$5 USD</div>
+                  </div>
+                </label>
+                <label class="extra-checkbox">
+                  <input type="checkbox" id="extraMascarilla" data-extra-price="8" onchange="updateTicketSummary()">
+                  <div class="extra-box">
+                    <div class="extra-name">+ Mascarilla Negra Carbón</div>
+                    <div class="extra-cost">+$8 USD</div>
+                  </div>
+                </label>
+                <label class="extra-checkbox">
+                  <input type="checkbox" id="extraCeja" data-extra-price="4" onchange="updateTicketSummary()">
+                  <div class="extra-box">
+                    <div class="extra-name">+ Perfilado de Cejas</div>
+                    <div class="extra-cost">+$4 USD</div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-xl btn-glow full-width">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>CONFIRMAR CONVOCATORIA (WHATSAPP)</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Right: Live Match Ticket Pass -->
+        <div class="ticket-preview-wrapper">
+          <div class="ticket-label-head">
+            <i class="fa-solid fa-qrcode"></i> PASE OFICIAL DE VESTUARIO
+          </div>
+
+          <div class="stadium-ticket" id="matchTicket">
+            <!-- Ticket Top -->
+            <div class="ticket-top">
+              <div class="ticket-header-brand">
+                <div class="ticket-brand">BALLER & CO.</div>
+                <div class="ticket-category">MATCH PASS • VIP</div>
+              </div>
+              <div class="ticket-match-title" id="ticketServiceName">
+                EL GALÁCTICO SKIN FADE
+              </div>
+              <div class="ticket-meta-grid">
+                <div class="meta-item">
+                  <span class="meta-label">TITULAR</span>
+                  <span class="meta-val" id="ticketPlayerName">CRACK INVITADO</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">DT ASIGNADO</span>
+                  <span class="meta-val" id="ticketBarberName">Matías Rossi</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">FECHA</span>
+                  <span class="meta-val" id="ticketDate">HOY</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">HORA DEL SILBATAZO</span>
+                  <span class="meta-val" id="ticketTime">10:00 AM</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ticket Notch Divider -->
+            <div class="ticket-divider">
+              <span class="notch notch-left"></span>
+              <div class="dashed-line"></div>
+              <span class="notch notch-right"></span>
+            </div>
+
+            <!-- Ticket Bottom / Stub -->
+            <div class="ticket-bottom">
+              <div class="ticket-total-row">
+                <div>
+                  <span class="total-label">TOTAL DEL FICHAJE</span>
+                  <div class="total-extras-info" id="ticketExtrasSummary">Sin adicionales</div>
+                </div>
+                <div class="ticket-price-val" id="ticketTotalPrice">$25 USD</div>
+              </div>
+
+              <div class="ticket-barcode">
+                <div class="barcode-lines">
+                  <span></span><span></span><span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="barcode-code">BLR-2026-CHAMP-01</div>
+              </div>
+
+              <div class="ticket-perks">
+                <span><i class="fa-brands fa-playstation text-turf"></i> PS5 Acceso Libre</span>
+                <span><i class="fa-solid fa-mug-hot text-gold"></i> Café Espresso Free</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Instant Status Message -->
+          <div class="ticket-guarantee">
+            <i class="fa-solid fa-shield-check text-turf"></i>
+            <span>Garantía de Puntualidad: Si tu DT se retrasa más de 10 min, tu bebida en el Lounge corre por nuestra
+              cuenta.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Press / Testimonials Section -->
+  <section class="section testimonials-section" id="testimonios">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag">DECLARACIONES POST-PARTIDO</div>
+        <h2 class="section-title">LO QUE DICE <span class="text-gradient-gold">LA PRENSA Y LOS CRACKS</span></h2>
+        <p class="section-subtitle">Opiniones de quienes ya vivieron la experiencia de vestuario en Baller & Co.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+          <div class="testi-rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="testi-quote">
+            «Antes de cada partido importante de copa me paso por acá con Matías. El skin fade y el perfilado quedan
+            impecables para las cámaras en 4K. El lounge con la PS5 es otro nivel.»
+          </p>
+          <div class="testi-author">
+            <div class="author-avatar"><i class="fa-solid fa-user"></i></div>
+            <div>
+              <strong>Federico V.</strong>
+              <span>Delantero • Liga Profesional</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card featured-testi">
+          <div class="testi-badge">MVP DEL MES</div>
+          <div class="testi-rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="testi-quote">
+            «El servicio Ballon d'Or VIP es una locura. La toalla caliente y el tratamiento de oro te dejan listo para
+            rendir al 100%. La mejor barbería de temática fútbol que existe.»
+          </p>
+          <div class="testi-author">
+            <div class="author-avatar"><i class="fa-solid fa-crown text-gold"></i></div>
+            <div>
+              <strong>Lautaro M.</strong>
+              <span>Capitán • Torneo Federal</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card">
+          <div class="testi-rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="testi-quote">
+            «Traje a mi hijo para su corte de cantera y le hicieron el mismo diseño de su ídolo. La atención de Lucas
+            Silva fue de 10 puntos, además jugó una partida en la Play mientras esperaba.»
+          </p>
+          <div class="testi-author">
+            <div class="author-avatar"><i class="fa-solid fa-user"></i></div>
+            <div>
+              <strong>Andrés G.</strong>
+              <span>Cliente VIP</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location & Stadium Schedule -->
+  <section class="section location-section">
+    <div class="container">
+      <div class="location-card">
+        <div class="location-grid">
+          <div class="loc-info">
+            <span class="section-tag text-turf">EL ESTADIO CENTRAL</span>
+            <h3>SEDE PRINCIPAL & VESTUARIO</h3>
+            <p><i class="fa-solid fa-location-dot text-gold"></i> Av. de los Campeones 1010, Distrito Deportivo</p>
+            <p><i class="fa-solid fa-clock text-turf"></i> <strong>Lunes a Sábado:</strong> 10:00 AM - 09:00 PM</p>
+            <p><i class="fa-solid fa-calendar-xmark text-gold"></i> <strong>Domingo:</strong> Jornada de Descanso /
+              Partidos</p>
+
+            <div class="loc-contact-btn">
+              <a href="https://wa.me/?text=Hola%20Baller%20and%20Co,%20quiero%20hacer%20una%20consulta" target="_blank"
+                class="btn btn-outline">
+                <i class="fa-brands fa-whatsapp"></i> Chat Directo con el Club
+              </a>
+            </div>
+          </div>
+          <div class="loc-pitch-preview">
+            <div class="pitch-box">
+              <div class="pitch-circle"></div>
+              <div class="pitch-line"></div>
+              <div class="pitch-penalty-top"></div>
+              <div class="pitch-penalty-bottom"></div>
+              <div class="pitch-marker">
+                <i class="fa-solid fa-scissors"></i>
+                <span>BALLER & CO HQ</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <div class="brand-logo">
+            <div class="logo-crest">
+              <i class="fa-solid fa-scissors"></i>
+            </div>
+            <div class="logo-text">
+              <span class="brand-name">BALLER<span class="highlight">&</span>CO.</span>
+              <span class="brand-sub">THE FOOTBALLERS' BARBER</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Elevando el estilo de los futbolistas y apasionados del deporte con el máximo nivel de precisión, confort y
+            exclusividad.
+          </p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Cortes Populares</h4>
+          <ul class="footer-links">
+            <li><a href="#servicios">El Galáctico Skin Fade</a></li>
+            <li><a href="#servicios">The Ballon d'Or VIP</a></li>
+            <li><a href="#servicios">Barba de Capitán & Taper</a></li>
+            <li><a href="#servicios">Platinado Polar / Color</a></li>
+            <li><a href="#servicios">Diseños & Rayas a Navaja</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Instalaciones</h4>
+          <ul class="footer-links">
+            <li><a href="#lounge">Champions Lounge</a></li>
+            <li><a href="#lounge">Zona PlayStation 5</a></li>
+            <li><a href="#lounge">Barra de Café & Bebidas</a></li>
+            <li><a href="#barberos">Staff de Barberos Pro</a></li>
+            <li><a href="#booking">Reserva de Turno Online</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Newsletter de Vestuario</h4>
+          <p class="footer-subtext">Suscríbete para sorteos de camisetas oficiales y descuentos en partidos clave.</p>
+          <div class="newsletter-form">
+            <input type="email" placeholder="Tu correo electrónico...">
+            <button class="btn btn-primary btn-sm"><i class="fa-solid fa-paper-plane"></i></button>
+          </div>
+        </div>
+      </div>
+
       <div class="footer-bottom">
-        <span class="copyright">© 2025 Charly Barber Shop. Todos los derechos reservados.</span>
-        <span class="copyright">Diseño por <a href="#" style="color: var(--accent-gold);">Antigravity Studio</a></span>
+        <p>&copy; 2026 BALLER & CO. Barber Lounge. Todos los derechos reservados.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Términos y Condiciones</a>
+          <a href="#">Privacidad</a>
+          <a href="#">Reglamento de Vestuario</a>
+        </div>
       </div>
     </div>
   </footer>
 
-  <!-- BOTÓN FLOTANTE DE WHATSAPP -->
-  <div class="whatsapp-btn-wrapper" id="whatsappWrapper">
-    <a href="#" class="whatsapp-link" aria-label="Escríbenos por WhatsApp" id="whatsappLink">
-      <svg class="whatsapp-icon" viewBox="0 0 24 24">
-        <path d="M12.012 2C6.5 2 2.012 6.5 2.012 12c0 2.046.618 3.948 1.678 5.53L2 22l4.63-1.636c1.517.923 3.298 1.455 5.203 1.455 5.513 0 10.012-4.5 10.012-10S17.525 2 12.012 2zm6.657 14.156c-.273.77-.923 1.403-1.68 1.683-.695.258-1.57.447-4.66-.826-3.23-1.328-5.32-4.606-5.48-4.82-.16-.215-1.3-1.728-1.3-3.3 0-1.57.82-2.344 1.114-2.653.295-.31.645-.386.86-.386.216 0 .432.002.62.01.196.01.46-.074.72.553.272.65.928 2.27.1 2.45-.16.035-.333.08-.49.196-.157.116-.322.243-.46.398-.15.17-.307.35-.13.655.176.3.784 1.293 1.68 2.087.77.683 1.417.893 1.68 1.002.262.11.518.067.712-.14.195-.208.852-1.002.99-1.304.135-.3.27-.247.46-.177.195.07 1.23.58 1.442.686.212.106.353.158.405.247.053.09.053.518-.22.1.288-.77.288-.77.19-.77z"/>
-      </svg>
-    </a>
-    <div class="whatsapp-tooltip">¡Escríbenos ahora!</div>
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toastMessage">¡Servicio añadido a tu alineación!</span>
   </div>
 
-  <!-- SCRIPTS JS -->
-  <script src="js/main.js"></script>
-  <script src="js/gallery.js"></script>
-  <script src="js/whatsapp.js"></script>
+  <!-- Scripts -->
+  <script src="app.js"></script>
 </body>
+
 </html>
