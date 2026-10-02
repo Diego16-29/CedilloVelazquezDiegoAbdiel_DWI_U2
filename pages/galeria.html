@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería de Estilos | Charly Barber Shop</title>
+  <meta name="description" content="Nuestra galería de cortes, barbas y afeitados tradicionales. Encuentra inspiración para tu próximo estilo en Charly Barber Shop.">
+  
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&q=80&w=32">
+
+  <!-- ESTILOS CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <style>
+    .internal-hero {
+      height: 40vh;
+      background-image: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.9)), url('https://images.unsplash.com/photo-1517832606589-7a598b389283?auto=format&fit=crop&q=80&w=1920');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BARRA DE PROGRESO -->
+  <div class="scroll-progress-container">
+    <div class="scroll-progress-bar"></div>
+  </div>
+
+  <!-- PRELOADER -->
+  <div class="preloader">
+    <div class="preloader-logo">
+      <svg class="preloader-icon animate-pulse" viewBox="0 0 24 24">
+        <path d="M19 3c-1.8 0-3.4 1.2-3.8 2.9l-3.2 2.6-3.2-2.6C8.4 4.2 6.8 3 5 3 2.2 3 0 5.2 0 8s2.2 5 5 5c1 0 1.9-.3 2.7-.8l2.3 2.8-2.3 2.8c-.8-.5-1.7-.8-2.7-.8-2.8 0-5 2.2-5 5s2.2 5 5 5c1.8 0 3.4-1.2 3.8-2.9l3.2-2.6 3.2 2.6c.4 1.7 2 2.9 3.8 2.9 2.8 0 5-2.2 5-5s-2.2-5-5-5c-1 0-1.9.3-2.7.8l-2.3-2.8 2.3-2.8c.8.5 1.7.8 2.7.8 2.8 0 5-2.2 5-5s-2.2-5-5-5zm-14 8c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm14 10c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm0-13c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm-14 13c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/>
+      </svg>
+      <h2 class="preloader-title">Charly <span>Barber</span></h2>
+      <div class="preloader-spinner"></div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="header-nav">
+    <nav class="nav-container">
+      <a href="../index.html" class="logo">
+        <svg class="logo-icon" viewBox="0 0 24 24">
+          <path d="M19 3c-1.8 0-3.4 1.2-3.8 2.9l-3.2 2.6-3.2-2.6C8.4 4.2 6.8 3 5 3 2.2 3 0 5.2 0 8s2.2 5 5 5c1 0 1.9-.3 2.7-.8l2.3 2.8-2.3 2.8c-.8-.5-1.7-.8-2.7-.8-2.8 0-5 2.2-5 5s2.2 5 5 5c1.8 0 3.4-1.2 3.8-2.9l3.2-2.6 3.2 2.6c.4 1.7 2 2.9 3.8 2.9 2.8 0 5-2.2 5-5s-2.2-5-5-5c-1 0-1.9.3-2.7.8l-2.3-2.8 2.3-2.8c.8.5 1.7.8 2.7.8 2.8 0 5-2.2 5-5s-2.2-5-5-5zm-14 8c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm14 10c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm0-13c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm-14 13c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/>
+        </svg>
+        <span class="logo-text">Charly <span>Barber</span></span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="../index.html" class="nav-link">Inicio</a></li>
+        <li><a href="servicios.html" class="nav-link">Servicios</a></li>
+        <li><a href="galeria.html" class="nav-link active">Galería</a></li>
+        <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+        <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+        <li class="nav-cta-mobile" style="display: none;">
+          <a href="contacto.html" class="btn btn-primary">Reservar Cita</a>
+        </li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contacto.html" class="btn btn-primary">Reservar Cita</a>
+      </div>
+      <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- HERO INTERNO -->
+  <section class="internal-hero">
+    <div class="hero-content reveal-fade">
+      <span class="hero-subtitle" style="color: var(--accent-gold);">Trabajos</span>
+      <h1 class="hero-title" style="font-size: 3.5rem; margin-bottom: 0;">Galería de Cortes</h1>
+    </div>
+  </section>
+
+  <!-- GALERÍA CON FILTROS -->
+  <section class="gallery-section section-padding">
+    <div class="container">
+      <div class="gallery-filters reveal-fade">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="clasicos">Clásicos</button>
+        <button class="filter-btn" data-filter="fade">Fade</button>
+        <button class="filter-btn" data-filter="barba">Barba</button>
+        <button class="filter-btn" data-filter="texturizados">Texturizados</button>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item reveal-slide-up clickable" data-category="clasicos">
+          <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=600" alt="Corte Clásico Pompadour">
+          <div class="gallery-overlay">
+            <svg class="gallery-zoom-icon" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            <h3 class="gallery-title">Pompadour Clásico</h3>
+            <span class="gallery-category">Clásicos</span>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal-slide-up delay-100 clickable" data-category="fade">
+          <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&q=80&w=600" alt="Corte Mid Fade Moderno">
+          <div class="gallery-overlay">
+            <svg class="gallery-zoom-icon" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            <h3 class="gallery-title">High Skin Fade</h3>
+            <span class="gallery-category">Fade</span>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal-slide-up delay-200 clickable" data-category="barba">
+          <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&q=80&w=600" alt="Diseño de Barba y Perfilado">
+          <div class="gallery-overlay">
+            <svg class="gallery-zoom-icon" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            <h3 class="gallery-title">Perfilado De Barba</h3>
+            <span class="gallery-category">Barba</span>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal-slide-up clickable" data-category="texturizados">
+          <img src="https://images.unsplash.com/photo-1605497746445-97d1b0a9eaf4?auto=format&fit=crop&q=80&w=600" alt="Corte Crop Texturizado">
+          <div class="gallery-overlay">
+            <svg class="gallery-zoom-icon" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            <h3 class="gallery-title">Texturizado Moderno</h3>
+            <span class="gallery-category">Texturizados</span>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal-slide-up delay-100 clickable" data-category="clasicos">
+          <img src="https://images.unsplash.com/photo-1517832606589-7a598b389283?auto=format&fit=crop&q=80&w=600" alt="Corte Side Part Elegante">
+          <div class="gallery-overlay">
+            <svg class="gallery-zoom-icon" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            <h3 class="gallery-title">Raya a un Lado</h3>
+            <span class="gallery-category">Clásicos</span>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal-slide-up delay-200 clickable" data-category="barba">
+          <img src="https://images.unsplash.com/photo-1593702295094-aec22597af05?auto=format&fit=crop&q=80&w=600" alt="Cuidado De Barba Larga">
+          <div class="gallery-overlay">
+            <svg class="gallery-zoom-icon" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            <h3 class="gallery-title">Cuidado Full Beard</h3>
+            <span class="gallery-category">Barba</span>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal-slide-up clickable" data-category="fade">
+          <img src="https://images.unsplash.com/photo-1599351431247-f5094087e19b?auto=format&fit=crop&q=80&w=600" alt="Low Fade con Textura">
+          <div class="gallery-overlay">
+            <svg class="gallery-zoom-icon" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            <h3 class="gallery-title">Low Drop Fade</h3>
+            <span class="gallery-category">Fade</span>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal-slide-up delay-100 clickable" data-category="clasicos">
+          <img src="https://images.unsplash.com/photo-1503951458645-643d53efd90f?auto=format&fit=crop&q=80&w=600" alt="Afeitado Tradicional Navaja">
+          <div class="gallery-overlay">
+            <svg class="gallery-zoom-icon" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            <h3 class="gallery-title">Afeitado de Ritual</h3>
+            <span class="gallery-category">Clásicos</span>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal-slide-up delay-200 clickable" data-category="texturizados">
+          <img src="https://images.unsplash.com/photo-1608248597481-496100c80836?auto=format&fit=crop&q=80&w=600" alt="Estilo Texturizado Despeinado">
+          <div class="gallery-overlay">
+            <svg class="gallery-zoom-icon" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            <h3 class="gallery-title">Messy Quiff</h3>
+            <span class="gallery-category">Texturizados</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX MODAL -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizador de imágenes">
+    <div class="lightbox-content-wrapper">
+      <button class="lightbox-close" aria-label="Cerrar visualizador">&times;</button>
+      <button class="lightbox-arrow lightbox-prev" aria-label="Imagen anterior">&#10094;</button>
+      <img class="lightbox-img" src="" alt="Corte en alta resolución">
+      <button class="lightbox-arrow lightbox-next" aria-label="Siguiente imagen">&#10095;</button>
+      <div class="lightbox-caption">
+        <h3 class="lightbox-title">Título del Corte</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-layout">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo">
+            <svg class="logo-icon" viewBox="0 0 24 24">
+              <path d="M19 3c-1.8 0-3.4 1.2-3.8 2.9l-3.2 2.6-3.2-2.6C8.4 4.2 6.8 3 5 3 2.2 3 0 5.2 0 8s2.2 5 5 5c1 0 1.9-.3 2.7-.8l2.3 2.8-2.3 2.8c-.8-.5-1.7-.8-2.7-.8-2.8 0-5 2.2-5 5s2.2 5 5 5c1.8 0 3.4-1.2 3.8-2.9l3.2-2.6 3.2 2.6c.4 1.7 2 2.9 3.8 2.9 2.8 0 5-2.2 5-5s-2.2-5-5-5c-1 0-1.9.3-2.7.8l-2.3-2.8 2.3-2.8c.8.5 1.7.8 2.7.8 2.8 0 5-2.2 5-5s-2.2-5-5-5zm-14 8c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm14 10c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm0-13c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm-14 13c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/>
+            </svg>
+            <span class="logo-text">Charly <span>Barber</span></span>
+          </a>
+          <p>Ofreciendo cortes de cabello y afeitados tradicionales premium desde 2018. El lugar idóneo para caballeros sofisticados.</p>
+        </div>
+        <div>
+          <h4 class="footer-column-title">Enlaces</h4>
+          <ul class="footer-menu">
+            <li><a href="../index.html" class="footer-menu-link">Inicio</a></li>
+            <li><a href="servicios.html" class="footer-menu-link">Servicios</a></li>
+            <li><a href="galeria.html" class="footer-menu-link">Galería</a></li>
+            <li><a href="nosotros.html" class="footer-menu-link">Nosotros</a></li>
+            <li><a href="contacto.html" class="footer-menu-link">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-column-title">Secciones</h4>
+          <ul class="footer-menu">
+            <li><a href="servicios.html" class="footer-menu-link">Nuestros Servicios</a></li>
+            <li><a href="galeria.html" class="footer-menu-link">Galería de Cortes</a></li>
+            <li><a href="nosotros.html" class="footer-menu-link">Sobre Nosotros</a></li>
+            <li><a href="contacto.html" class="footer-menu-link">Reservas & Horarios</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-column-title">Contacto</h4>
+          <ul class="footer-menu">
+            <li class="footer-menu-link" style="padding-left: 0; pointer-events: none;">Av. Reforma 405, CDMX</li>
+            <li><a href="tel:+525512345678" class="footer-menu-link" style="padding-left: 0;">+52 55 1234 5678</a></li>
+            <li><a href="mailto:info@charlybarbershop.com" class="footer-menu-link" style="padding-left: 0;">info@charlybarbershop.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="copyright">© 2025 Charly Barber Shop. Todos los derechos reservados.</span>
+        <span class="copyright">Diseño por <a href="#" style="color: var(--accent-gold);">Antigravity Studio</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP -->
+  <div class="whatsapp-btn-wrapper">
+    <a href="#" class="whatsapp-link" aria-label="Escríbenos por WhatsApp">
+      <svg class="whatsapp-icon" viewBox="0 0 24 24">
+        <path d="M12.012 2C6.5 2 2.012 6.5 2.012 12c0 2.046.618 3.948 1.678 5.53L2 22l4.63-1.636c1.517.923 3.298 1.455 5.203 1.455 5.513 0 10.012-4.5 10.012-10S17.525 2 12.012 2zm6.657 14.156c-.273.77-.923 1.403-1.68 1.683-.695.258-1.57.447-4.66-.826-3.23-1.328-5.32-4.606-5.48-4.82-.16-.215-1.3-1.728-1.3-3.3 0-1.57.82-2.344 1.114-2.653.295-.31.645-.386.86-.386.216 0 .432.002.62.01.196.01.46-.074.72.553.272.65.928 2.27.1 2.45-.16.035-.333.08-.49.196-.157.116-.322.243-.46.398-.15.17-.307.35-.13.655.176.3.784 1.293 1.68 2.087.77.683 1.417.893 1.68 1.002.262.11.518.067.712-.14.195-.208.852-1.002.99-1.304.135-.3.27-.247.46-.177.195.07 1.23.58 1.442.686.212.106.353.158.405.247.053.09.053.518-.22.1.288-.77.288-.77.19-.77z"/>
+      </svg>
+    </a>
+    <div class="whatsapp-tooltip">¡Escríbenos ahora!</div>
+  </div>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/gallery.js"></script>
+  <script src="../js/whatsapp.js"></script>
+</body>
+</html>

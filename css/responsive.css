@@ -1,0 +1,229 @@
+/* ==========================================================================
+   CHARLY BARBER SHOP - ESTILOS DE RESPONSIVIDAD (MEDIA QUERIES)
+   ========================================================================== */
+
+/* DISPOSITIVOS MÓVILES (BREAKPOINT: 480PX O MENOS) */
+@media screen and (max-width: 480px) {
+  :root {
+    --header-height: 70px;
+  }
+
+  html {
+    font-size: 14px; /* Escala tipográfica base ligeramente menor */
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    gap: 12px;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+  }
+
+  .section-padding {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  /* Formulario de contacto */
+  .contact-form-wrapper {
+    padding: 25px 20px;
+  }
+
+  /* WhatsApp Flotante más grande para mayor comodidad al tacto en móvil */
+  .whatsapp-link {
+    width: 62px;
+    height: 62px;
+  }
+
+  .whatsapp-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  /* Lightbox en móvil */
+  .lightbox-prev,
+  .lightbox-next {
+    width: 40px;
+    height: 40px;
+  }
+
+  .lightbox-prev {
+    left: -45px;
+  }
+
+  .lightbox-next {
+    right: -45px;
+  }
+
+  /* Ocultar el cursor personalizado para mejorar la experiencia móvil nativa */
+  .custom-cursor-dot,
+  .custom-cursor-outline {
+    display: none !important;
+  }
+  body.custom-cursor-active {
+    cursor: auto !important;
+  }
+}
+
+/* TABLETS Y MÓVILES EN ORIENTACIÓN HORIZONTAL (BREAKPOINT: 768PX O MENOS) */
+@media screen and (max-width: 768px) {
+  /* NAVBAR ADAPTATIVA (MENÚ HAMBURGUESA) */
+  .hamburger {
+    display: flex; /* Mostrar botón de menú hamburguesa */
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: var(--bg-secondary);
+    border-left: 1px solid var(--border-color);
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px;
+    transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 1000;
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  /* Animación del menú Hamburguesa a "X" */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  .nav-cta {
+    display: none; /* Ocultar CTA de la barra principal */
+  }
+
+  .nav-menu .nav-cta-mobile {
+    display: block !important;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* LAYOUTS MULTI-COLUMNA A COLUMNA SIMPLE */
+  .services-grid {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+    margin: 0 auto;
+    gap: 25px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .stats-grid {
+    margin: 30px 0;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin: 0 auto;
+    gap: 25px;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .footer-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  /* Cursor personalizado deshabilitado en tablets/pantallas táctiles */
+  .custom-cursor-dot,
+  .custom-cursor-outline {
+    display: none !important;
+  }
+  body.custom-cursor-active {
+    cursor: auto !important;
+  }
+
+  /* Lightbox en móvil y tablet */
+  .lightbox-content-wrapper {
+    max-width: 90%;
+  }
+
+  .lightbox-prev {
+    left: -50px;
+  }
+
+  .lightbox-next {
+    right: -50px;
+  }
+}
+
+/* LAPTOPS / DESKTOP MEDIANO (BREAKPOINT: 1024PX O MENOS) */
+@media screen and (max-width: 1024px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-layout {
+    gap: 30px;
+  }
+
+  .contact-layout {
+    gap: 30px;
+  }
+
+  .footer-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* PANTALLAS EXTRA GRANDES (BREAKPOINT: 1280PX O SUPERIOR) */
+@media screen and (min-width: 1280px) {
+  .container {
+    width: 85%;
+  }
+}
